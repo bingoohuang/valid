@@ -48,7 +48,8 @@ in your code all you need to do is check if the error returned is not nil, and i
 is InvalidValidationError ( if necessary, most of the time it isn't ) type cast it to type ValidationErrors like so:
 
 ```go
-err := valid.Struct(mystruct)
+va := valid.New()
+err := va.Struct(mystruct)
 validationErrors := err.(valid.ValidationErrors)
  ```
 
@@ -87,6 +88,7 @@ Baked-in Validations
 | ltfield | Less Than Another Field |
 | necsfield | Field Does Not Equal Another Field (relative) |
 | nefield | Field Does Not Equal Another Field |
+| reg | Field Does match the directly specified regular expression or named one which is pre-registered by valid.RegisterReg |
 
 ### Network:
 

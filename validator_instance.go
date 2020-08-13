@@ -82,7 +82,7 @@ type Validate struct {
 	regs             map[string]*regexp.Regexp
 }
 
-// New returns a new instance of 'valid' with sane defaults.
+// New returns a new instance of 'Validate' with sane defaults.
 func New() *Validate {
 	tc := new(tagCache)
 	tc.m.Store(make(map[string]*cTag))
